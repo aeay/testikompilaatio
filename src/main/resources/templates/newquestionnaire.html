@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Kompilaatio - New Questionnaire</title>
+</head>
+<body>
+	<h1>New questionnaire</h1>
+	<form th:object="${questionnaire}" th:action="@{/save}" action="#" method="post">
+		<label for="name">Group name:</label>
+		<input type="text" id="name" th:field="*{name}" />
+		<br />
+		<label for="questionnairename">Questionnaire name:</label>
+		<input type="text" id="questionnairename" th:field="*{questionnairename}" />
+		<br />
+		
+		<input class="button" type="submit" value="Save"></input>
+	</form>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>REST API Documentation</title>
+		<style>
+		body {
+			margin: 20px;
+			font-size: 17px;}
+		p {
+			font-family: "Courier New";
+			font-size: 15px;}
+		</style>
+		<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" />
+	</head>
+	<body>
+		<p style="font-family: 'Pacifico', cursive;font-size: 25px;">&#9733; Kompilaatio &#9733;</p>
+		<h1>REST API Documentation</h1>
+		<ul>
+			<li>Questions By Questionnaire </li>
+			<li>Questions By Id </li>
+			<li>Save All Answers </li>
+			<li>Save One Answer </li>
+			<li>All Answers By Id </li>
+		</ul>
+		<br/>
+		<br/>
+	
+		<h2>Questions By Questionnaire (GET)</h2>
+			<b>API CALL:</b> https://kompilaatio.herokuapp.com/questionnaires/{questionnaire_id}/questions
+			<br/>
+			<br/>
+			<b>EXAMPLES OF API CALL: </b><br/>
+			<a href="https://kompilaatio.herokuapp.com/questionnaires/1/questions">https://kompilaatio.herokuapp.com/questionnaires/1/questions</a> <br/>
+			<a href="https://kompilaatio.herokuapp.com/questionnaires/2/questions">https://kompilaatio.herokuapp.com/questionnaires/2/questions</a>
+			<br/>
+			<br/>
+			<b>API RESPONSE:</b>
+			<p>[{"id":13,"rownumber":1,"question":"Sukupuoli","answertype":"radio","choices":[{"id":40,"choice":"nainen"},{"id":41,"choice":"mies"}]},{"id":14,"rownumber":2,"question":"Oletko käyttänyt koulun tarjoamia liikuntapalveluja?","answertype":"radio","choices":[{"id":42,"choice":"Kyllä"},{"id":43,"choice":"En"}]},{"id":15,"rownumber":4,"question":"Tarjoaako koulu tarpeeksi liikuntapalveluja opiskelijoille?","answertype":"radio","choices":[{"id":44,"choice":"Kyllä"},{"id":45,"choice":"Ei"}]},{"id":16,"rownumber":5,"question":"Mitä liikuntapalveluja käytät?","answertype":"Teksti","choices":[]},{"id":17,"rownumber":6,"question":"Kuinka usein käytät koulun tarjoamia liikuntapalveluja?","answertype":"radio","choices":[{"id":46,"choice":"En lainkaan"},{"id":47,"choice":"1-2 krt/vko"},{"id":48,"choice":"3-5 krt/vko"},{"id":49,"choice":"yli 5 krt/vko"}]},{"id":18,"rownumber":7,"question":"Mitä koulu voisi tarjota, mistä voisit olla kiinnostunut?","answertype":"Teksti","choices":[]},{"id":19,"rownumber":8,"question":"Mitä mieltä olet palveluista?","answertype":"Teksti","choices":[]},{"id":20,"rownumber":9,"question":"Olisitko valmis maksamaan tietyistä palveluista?","answertype":"radio","choices":[{"id":50,"choice":"Kyllä"},{"id":51,"choice":"En"}]},{"id":21,"rownumber":10,"question":"Miten kehittäisit koulun tarjoamia liikuntapalveluja?","answertype":"Teksti","choices":[]},{"id":22,"rownumber":11,"question":"Miten HH voisi mainostaa palveluita paremmin?","answertype":"Teksti","choices":[]}]</p><br/>
+			<br/>
+		
+		<h2>Questions By Id (GET)</h2>
+			<b>API CALL:</b> https://kompilaatio.herokuapp.com/questions/{question id}
+			<br/>
+			<br/>
+			<b>EXAMPLES OF API CALL: </b><br/>
+			<a href="https://kompilaatio.herokuapp.com/questions/1">https://kompilaatio.herokuapp.com/questions/1</a> <br/>
+			<a href="https://kompilaatio.herokuapp.com/questions/2">https://kompilaatio.herokuapp.com/questions/2</a>
+			<br/>
+			<br/>
+			<b>API RESPONSE: </b>
+			<p>{"id":1,"rownumber":1,"question":"Sukupuoli","answertype":"radio","choices":[{"id":1,"choice":"nainen"},{"id":2,"choice":"mies"},{"id":3,"choice":"En halua vastata"}]}</p>
+			<br/>
+			<br/>
+			
+		<h2>Save All Answers (POST)</h2>
+			<b>API CALL:</b> https://kompilaatio.herokuapp.com/questionnaires/{questionnaire_id}/answers
+			<br/>
+			<br/>
+			<b>EXAMPLES OF API CALL: </b><br/>
+			https://kompilaatio.herokuapp.com/questionnaires/1/answers<br/>
+			https://kompilaatio.herokuapp.com/questionnaires/2/answers
+			<br/>
+			<br/>
+			<b>API RESPONSE: </b>
+			<p>[{"answertext":"nainen", "questionid":"1"},{"answertext":"Ruuan laatu on hyvä", "questionid":"4"}]</p>
+			<br/>
+			<br/>
+			
+		<h2>Save One Answer (POST)</h2>
+			<b>API CALL:</b> https://kompilaatio.herokuapp.com/questions/{id}/answer
+			<br/>
+			<br/>
+			<b>EXAMPLES OF API CALL: </b><br/>
+			https://kompilaatio.herokuapp.com/questions/1/answer <br/>
+			https://kompilaatio.herokuapp.com/questions/2/answer
+			<br/>
+			<br/>
+			<b>API RESPONSE: </b>
+			<p>{"answertext":"nainen","questionid":"1"}</p>
+			<br/>
+			<br/>
+
+		<h2>All Answers By Id (GET)</h2>
+			<b>API CALL:</b> https://kompilaatio.herokuapp.com/questions/{id}/answers
+			<br/>
+			<br/>
+			<br/>
+			<b>EXAMPLE OF API CALL: </b><br/>
+			<a href="https://kompilaatio.herokuapp.com/questions/1/answers">https://kompilaatio.herokuapp.com/questions/1/answers</a>
+			<br/>
+			<br/>
+			<b>API RESPONSE: </b>
+			<p>[{"answertext":"nainen","questionid":1}]</p>
+			<br/>
+			<br/>
+	</body>
+</html>
